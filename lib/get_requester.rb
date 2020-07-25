@@ -3,11 +3,10 @@ require 'open-uri'
 require 'json'
 
 class GetRequester
-  
-  attr_accessor :url
+
   
   def initialize(url)
-    @url = URL
+    @url = url
   end
   
   def get_response_body
@@ -15,7 +14,9 @@ class GetRequester
     response = Net::HTTP.get_response(uri)
     response.body
   end
-end
 
-programs = GetRequester.new.get_response_body
-puts programs
+def parse_json
+        JSON.parse(get_response_body)
+    end
+  end
+end

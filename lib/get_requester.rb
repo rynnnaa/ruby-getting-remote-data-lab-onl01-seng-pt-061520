@@ -2,8 +2,6 @@ require 'net/http'
 require 'open-uri'
 require 'json'
 
-attr_accessor :url
-
 class GetRequester
   
   def initialize(url)
